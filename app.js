@@ -23,7 +23,7 @@ let tako = document.querySelector('#tako .ika');
 console.log(tako);
 
 
-// querySelectorAll （合致するすべての要素の取得）
+// querySelectorAll （合致するすべての要素の取得　）
 let ika = document.querySelectorAll('#tako .ika');
 console.log(ika);
 
