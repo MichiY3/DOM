@@ -65,9 +65,49 @@ document.querySelector('#hogehoge').classList.add('textblue');
 var parenthoge = document.querySelector('#hogehoge');
 	for (let li of parenthoge.children){
 		li.classList.add('textgrey');
+		li.classList[1].remove('textgrey');
+		// リストの２番目以降がtextgreyから外れる
 	}
 
 // クラスの削除
+// let ul = first_ika.parentElement;
+// console.log(ul);
+let takolist = ul.children;
+takolist[1].classList.remove('textgrey');
+// takolist[1].classList.add('textblue');
+// これでtakoのリストの２番目[1]のみクラスが外される
+
+// インプットタグの入力欄の文字の取得
+var input = document.querySelector('#input_name');
+console.log(input.value);
+
+
+function getInput(){
+	var input = document.querySelector('#input_name');
+	console.log(input.value);
+
+// 編集方法
+input.value = input.value + '様';
+}
+
+// イベントの登録
+var text = document.querySelector('#text');
+// <p>ほげ</p> が取得されている
+
+// 要素.addEventListener(イベント名,function(){イベント時に行いたい処理});
+text.addEventListener('click',function(){
+	this.style.color = 'red';
+	// thisは、ここで受けてる全体を指してる
+});
+
+
+var html = document.querySelector('#html');
+html.addEventListener('mouseover',function(){
+	this.style.color = 'yellow';
+});
+html.addEventListener('mouseleave',function(){
+	this.style.color = '';
+})
 
 
 
