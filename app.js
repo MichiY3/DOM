@@ -65,8 +65,9 @@ document.querySelector('#hogehoge').classList.add('textblue');
 var parenthoge = document.querySelector('#hogehoge');
 	for (let li of parenthoge.children){
 		li.classList.add('textgrey');
-		li.classList[1].remove('textgrey');
+		// li.classList[1].remove('textgrey');
 		// リストの２番目以降がtextgreyから外れる
+		// ===============！！！！！！ここ確認！！！！！！==============
 	}
 
 // クラスの削除
@@ -107,7 +108,84 @@ html.addEventListener('mouseover',function(){
 });
 html.addEventListener('mouseleave',function(){
 	this.style.color = '';
-})
+});
+
+
+
+// 要素の追加
+// 親要素の取得
+let parent_text = document.querySelector('#text');
+
+// Pタグを生成
+let child_p = document.createElement('p');
+// タグ内で表示される文字を設定
+child_p.textContent = 'ふがこ';
+
+//親要素に生成したpタグを追加
+// 親要素.appendChild(追加したいタグの要素);
+parent_text.appendChild(child_p);
+
+
+// pタグを生成
+let child_p_moge = document.createElement('p');
+// タグ内で表示される文字を設定
+child_p_moge.textContent = 'もげこ'; 
+// ふがこの上にもげこを追加する
+// 親要素.insertBefore(追kしたい要素,その手前に追加したい対象の要素);
+parent_text.insertBefore(child_p_moge,child_p);
+
+
+
+// 要素の削除
+// 削除したい要素.remove();
+let ant = document.querySelector('#ant');
+ant.remove();
+
+
+// 削除したい要素が含まれている親要素.removeChild(削除したい要素);
+let room = document.querySelector('#room');
+// roomの一番最初の子要素を削除　　ここではこの一つ前で一番最初の要素が削除されてるので、ここでは２番目が消える
+room.removeChild(room.firstElementChild);
+// やもりを削除する時
+room.removeChild(document.querySelector('#gecko'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
